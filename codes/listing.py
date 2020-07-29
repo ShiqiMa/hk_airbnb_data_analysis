@@ -6,18 +6,15 @@ from pathlib import Path
 import os
 from .loader import load_listing
 
-def head(listing_df):
-    return listing_df.head()
 
-
-def format_price():
+def format_listing_price():
     listings_detailed = load_listing()
     listings_detailed['price'] = listings_detailed['price'].str.replace(r"[$,]", "", regex=True).astype("float32")
     listings_detailed['cleacning_fee'] = listings_detailed['cleaning_fee'].str.replace(r"[$,]", "", regex=True).astype("float32").fillna(0, inplace=True)
     return listings_detailed
 
 
-def get_min_cost():
+def add_min_cost_column():
     listings_detailed = format_price()
     listings_detailed['minimum_cost'] = (listings_detailed['price']+listings_detailed['cleaning_fee'])*listings_detailed['minimum_nights']
     return listings_detailed

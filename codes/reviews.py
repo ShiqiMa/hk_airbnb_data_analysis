@@ -6,7 +6,7 @@ from pathlib import Path
 import os
 from .loader import load_reviews
 
-def format_date():
+def format_reviews_date():
     reviews = load_reviews()
     reviews['date'] = pd.to_datetime(reviews['date'])
     reviews['year'] = reviews['date'].dt.year
@@ -29,6 +29,7 @@ def count_year_month_reviews():
 
 
 def plot_year_month_reviews():
+    year_month_reviews = count_year_month_reviews()
     fig,ax = plt.subplots(figsize=(10,5))
     for index in year_month_reviews.index:
         series = year_month_reviews.loc[index]

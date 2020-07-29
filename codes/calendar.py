@@ -10,7 +10,7 @@ def head(calendar_df):
     return calendar_df.head()
 
 
-def format_price():
+def format_calendar_price():
     calendar = load_calendar()
     formated_price = calendar['price'].str.replace(r"[$,]", "", regex=True).astype('float32')
     calendar['price'] = formated_price
@@ -19,7 +19,7 @@ def format_price():
     return calendar
 
 
-def format_date():
+def format_calendar_date():
     calendar = format_price()
     calendar['date'] = pd.to_datetime(calendar['date'])
     calendar['weekday'] = calendar['date'].dt.weekday

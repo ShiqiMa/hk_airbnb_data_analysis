@@ -94,6 +94,6 @@ def predict_house_prices():
     y_predict = regressor.predict(X_test)
     pres = np.vstack([y_test, y_predict])
     res_df = pd.DataFrame(res, index=['真实价格', '预测价格'],columns=y_test.index)
-    print(res_df)
     print("平均误差：",mean_absolute_error(y_test, y_predict))
     print("R2评分：",r2_score(y_test, y_predict))
+    return res_df
