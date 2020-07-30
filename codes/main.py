@@ -75,10 +75,12 @@ plot_year_month_reviews()
 ###################################################################
 # process features data, split training and testing data, and fit the model
 predict_price_df = predict_house_prices()
+print(f"predict testing dataseta houses prices and compare them with the true target prices:\n{predict_price_df}")
 
 ###################################################################
 # predict latest months reviews number
 predict_reviews_df = predict_reviews_numbers()
+print(f"predict the future months reviews numbers:\n{predict_reviews_df}")
 
 # plot original and pridicted reviews numbers
 plot_final_reviews()

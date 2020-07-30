@@ -6,7 +6,6 @@ from pathlib import Path
 import os
 from .loader import load_listing
 
-
 def format_listing_price():
     listings_detailed = load_listing()
     listings_detailed['price'] = listings_detailed['price'].str.replace(r"[$,]", "", regex=True).astype("float32")

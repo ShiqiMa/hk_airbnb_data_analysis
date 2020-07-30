@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_absolute_error,r2_score
+from sklearn.metrics import mean_absolute_error, r2_score
 from .listing import format_price
 
 disparse_columns = [

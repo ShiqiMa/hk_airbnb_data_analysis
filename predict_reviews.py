@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 import os
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 from .reviews import format_date
-
 
 def predict_reviews_numbers():
     reviews = format_date()
